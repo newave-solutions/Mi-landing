@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interprelab - InterpreBot</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="InterpreLAB Logo" class="logo-image">
+                </a>
+            </div>
+            <div class="menu">
+                <a href="interprebot.html">InterpreBot</a>
+                <a href="InterpreCoach.html">InterpreCoach</a>
+                <a href="Resources.html">Resources</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a button>Sign Up</a>
+                <a button>Sign In</a>
+            </div>
+            <button class="cta-button">Get Started</button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>InterpreBot</h1>
+            <p class="subheadline">Your AI-Powered Medical Interpretation Assistant</p>
+            <div class="chat-interface">
+                <div class="chat-container">
+                    <div class="chat-messages" id="chatMessages">
+                        <!-- Messages will appear here -->
+                    </div>
+                    <div class="chat-input">
+                        <textarea id="userInput" placeholder="Type your message here..."></textarea>
+                        <button class="cta-button" onclick="sendMessage()">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 InterpreLAB. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/script.js"></script>
+</body>
+</html>
