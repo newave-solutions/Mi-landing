@@ -38,16 +38,14 @@ except Exception as e:
 
 @app.route('/')
 def index():
-    return send_from_directory('static', 'index.html')
+    return render_template('index.html')
 
 @app.route('/interprebot')
 def interprebot():
-    # Use render_template for interprebot since it uses Jinja templating
     return render_template('interprebot.html')
 
 @app.route('/interprecoach')
 def interprecoach():
-    # Change to render_template for consistency
     return render_template('interprecoach.html')
 
 @app.route('/resources')
