@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interprelab - InterpreBot</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Interprelab - InterpreBot</title>
+        <!-- Remove duplicate stylesheet -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <script src="{{ url_for('static', filename='js/ui.js') }}" defer></script>
+        <script src="{{ url_for('static', filename='js/commands.js') }}" defer></script>
+    </head>
 <body>
     <nav class="navbar">
         <div class="navbar-container">
             <div class="logo">
                 <a href="index.html">
-                    <img src="images/logo.png" alt="InterpreLAB Logo" class="logo-image">
+                    <img src="images/logo.svg" alt="InterpreLAB Logo" class="logo-image">
                 </a>
             </div>
             <div class="menu">
@@ -55,6 +60,6 @@
         </div>
     </footer>
 
-    <script src="../scripts/script.js"></script>
+    <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
 </body>
 </html>

@@ -3,26 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InterpreLAB</title> <link rel="stylesheet" href="css/styles.css">
+    <title>InterpreLAB</title> <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="navbar-container">
             <div class="logo">
                 <a href="#">
-                    <img src="images/logo.png" alt="interprelab Logo" class="logo-image">  
+                    <img src="images/logo.svg" alt="interprelab Logo" class="logo-image">  
                 </a>
             </div>
             <div class="menu">
-                <a href="#interprebot.html">InterpreBot</a>
-                <a href="#InterpreCoach.html">InterpreCoach</a>
-                <a href="#Resources.html">Resources</a>
-                <a href="#about.html">About</a>
-                <a href="#contact.html">Contact</a>
-                <a href="#signup">Sign Up</a>
-                <a href="#signin">Sign In</a>
+                <a href="https://interprelab.com/interprebot">InterpreBot</a>
+                <a href="https://interprelab.com/interprecoach">InterpreCoach</a>
+                <a href="https://interprelab.com/resources">Resources</a>
+                <a href="https://interprelab.com/about">About</a>
+                <a href="https://interprelab.com/contact">Contact</a>
+                <a href="https://interprelab.com/signup">Sign Up</a>
             </div>
-            <button class="cta-button">Get Started</button>
+            <button class="cta-button">Sign In</button>
         </div>
     </nav>
 
@@ -78,35 +77,54 @@
             <cite>— Maria S., Certified Medical Interpreter</cite>
         </div>
     </section>
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+<body class="bg-gray-700 text-gray-200"> <div class="main-container relative p-4 max-w-2xl mx-auto">
 
-    <div class="chat-interface">
-        <div class="chat-container">
-            <div class="chat-box chat-messages">
-                <!-- Messages will appear here -->
+        <div class="content-wrapper relative z-10 rounded-lg shadow-lg mt-10"> <div class="transcription-section p-6 border-b border-gray-700/50"> <h2 class="text-lg font-semibold text-gray-100 mb-3 flex items-center"> Transcription
+                    <canvas id="audio-visualizer-canvas" title="Toggle Microphone"></canvas>
+                </h2>
+                <p id="transcription-text" class="text-gray-300 leading-relaxed min-h-[5em]"> <span class="cursor animate-pulse">|</span>
+                </p>
             </div>
-            <div class="chat-input">
-                <div id="loading-indicator" style="display: none;">Thinking...</div>
-                <textarea class="user-input" placeholder="Type your message here..."></textarea>
-                <button id="send-button" class="cta-button">Send</button>
+
+            <div class="detection-section p-6">
+                <h2 class="text-lg font-semibold text-gray-100 mb-3">Detected Medical Terms</h2> <ul id="detected-terms-list" class="grid grid-cols-2 gap-x-6 gap-y-3">
+                    </ul>
             </div>
         </div>
+
+         <div class="relative z-10 mt-4 flex items-center p-3 bg-gray-900/80 backdrop-blur-sm border border-gray-700/50 rounded-lg shadow-md"> <input type="text" placeholder="Type your message..." class="flex-grow p-2 border border-gray-600 rounded-lg bg-gray-700 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+             <button id="dictionary-button" class="icon-button" title="Dictionary Lookup">
+                 <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/book-open.svg" alt="Dictionary" class="h-5 w-5 dictionary-icon text-gray-400 hover:text-gray-200"> </button>
+             <button class="ml-2 p-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                 <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/arrow-up-circle.svg" alt="Send" class="h-5 w-5 send-icon">
+            </button>
+        </div>
+
     </div>
 
+    
+    <div class="overlay absolute inset-0 bg-gray-900/80 backdrop-blur-sm z-0"></div> <!-- Overlay for background effect -->
     <footer id = "learning-path">
         <div class="footer-cta">
             <h2>Ready to Elevate Your Skills?</h2>
-            <button class="cta-button">Start Your Free Trial</button>
+            <p>Join the waitlist for interprelab and be the first to experience our innovative platform.</p>
+            <button class="cta-button">Waitlist</button>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 InterprelaB. All rights reserved.</p>
+            <p>&copy; 2025 interprelab
+                . All rights reserved.</p>
             <div class="footer-links">
                 <a href="/privacy">Privacy Policy</a>
                 <a href="/terms">Terms of Service</a>
             </div>
         </div>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/lucide-static@latest/dist/lucide.umd.js"></script> <!-- Lucide Icons -->
     <script src="scripts/chat.js"></script>  <!-- Add chat functionality -->
     <script src="../script.js"></script>        <!-- Keep main site functionality -->
+    <script src="js/chat.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory, render_template, url_for
 from flask_cors import CORS
 import google.generativeai as genai
 import os
@@ -42,7 +42,29 @@ def index():
 
 @app.route('/interprebot')
 def interprebot():
-    return send_from_directory('templates', 'interprebot.html')
+    # Use render_template for interprebot since it uses Jinja templating
+    return render_template('interprebot.html')
+
+@app.route('/interprecoach')
+def interprecoach():
+    # Change to render_template for consistency
+    return render_template('interprecoach.html')
+
+@app.route('/resources')
+def resources():
+    return send_from_directory('templates', 'resources.html')
+
+@app.route('/about')
+def about():
+    return send_from_directory('templates', 'about.html')
+
+@app.route('/contact')
+def contact():
+    return send_from_directory('templates', 'contact.html')
+
+@app.route('/signup')
+def signup():
+    return send_from_directory('templates', 'signup.html')
 
 @app.route('/api/ask-gemini', methods=['POST'])
 def ask_gemini():

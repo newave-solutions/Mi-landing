@@ -29,7 +29,7 @@ h1, h2, h3 {
     margin: 0 auto;
     padding: 15px 20px;
 }
-P
+
 .logo a {
     font-weight: bold;
     font-size: 1.5em;
@@ -53,6 +53,24 @@ P
     color: #0073B1;
 }
 
+/* Active page indicator */
+.menu a.active {
+    color: #0073B1;
+    font-weight: bold;
+    position: relative;
+}
+
+.menu a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #0073B1;
+}
+
+/* --- CTA Button Styles --- */
 .cta-button {
     background-color: #0073B1;
     color: white;
@@ -61,12 +79,33 @@ P
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    transition: transform 0.2s ease, background-color 0.2s ease;  /* Added transform */
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .cta-button:hover {
     background-color: #005a8c;
     transform: scale(1.05); /* Scale up on hover */
+    text-decoration: none; /* Ensure no underline on hover */
+}
+
+/* Footer CTA specific override */
+.footer-cta .cta-button {
+    background-color: white;
+    color: #004471;
+}
+
+.footer-cta .cta-button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Feature card CTA links */
+.feature-card .cta-button {
+    margin-top: 1em;
+    font-size: 0.9em;
+    padding: 8px 16px;
 }
 
 /* --- Hero Section Styles --- */
@@ -278,7 +317,7 @@ footer {
     .features-grid {
         grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
     }
-      .logo-placeholder {
+    .logo-placeholder {
         width: 120px; /* Smaller logos on small screens */
         height: 60px;
     }
@@ -286,8 +325,27 @@ footer {
         flex-direction: column;
         gap: 10px;
     }
-   .hero h1 {
+    .hero h1 {
         font-size: 2.5em; /*Smaller font size on smaller screens*/
+    }
+    .navbar-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .menu {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        padding: 10px 0;
+        display: none; /* Hidden by default on mobile */
+    }
+    .menu.active {
+        display: flex; /* Show when active class is added */
+    }
+    .menu a {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
     }
 }
 
@@ -298,11 +356,10 @@ footer {
     .menu {
         display: none; /* Optionally hide menu on very small screens */
     }
-     .hero h1 {
+    .hero h1 {
         font-size: 2em; /*Smaller font size on smaller screens*/
     }
 }
-/* ... (all your existing CSS) ... */
 
 /* Logo Image Styles */
 .logo-image {
@@ -348,4 +405,71 @@ footer {
     border-radius: 4px;
     resize: none;
     height: 40px;
+}
+
+/* CTA Button Links */
+.cta-button {
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Page-specific CTA colors */
+.interprebot-cta {
+    background-color: #0073B1;
+}
+
+.interprecoach-cta {
+    background-color: #00558C;
+}
+
+.resources-cta {
+    background-color: #004471;
+}
+
+/* Link states */
+.cta-button:visited {
+    color: white; /* Maintain white text on visited links */
+}
+
+.cta-button:active {
+    transform: scale(0.98);
+}
+
+/* Chat Message Styles */
+.chat-message {
+    padding: 12px;
+    margin: 8px;
+    border-radius: 8px;
+    max-width: 80%;
+}
+
+.user-message {
+    background: #e8f4ff;
+    margin-left: auto;
+    border-bottom-right-radius: 2px;
+}
+
+.bot-message {
+    background: #f0f2f5;
+    margin-right: auto;
+    border-bottom-left-radius: 2px;
+}
+
+.error-message {
+    background: #fff2f0;
+    color: #cf1322;
+    margin: 8px auto;
+    text-align: center;
+}
+
+.message-time {
+    display: block;
+    font-size: 0.8em;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.message-content {
+    word-break: break-word;
+    line-height: 1.4;
 }
